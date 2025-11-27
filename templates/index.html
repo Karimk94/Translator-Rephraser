@@ -8,11 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Add specific color for the new Tokenize button */
+        .action-btn[data-task="tokenize"] {
+            background-color: #8b5cf6; /* Violet */
+        }
+        .action-btn[data-task="tokenize"]:hover {
+            background-color: #7c3aed;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>AI Writing Assistant</h1>
-        <p class="subtitle">Translate or rephrase your text instantly</p>
+        <p class="subtitle">Translate, Rephrase, or Tokenize your text</p>
         
         <div class="input-area">
             <textarea id="text-input" rows="7" placeholder="Enter English or Arabic text..."></textarea>
@@ -22,6 +31,7 @@
         <div id="action-buttons-container" class="action-buttons">
             <button type="button" class="action-btn" data-task="translate">Translate</button>
             <button type="button" class="action-btn" data-task="rephrase">Rephrase</button>
+            <button type="button" class="action-btn" data-task="tokenize">Tokenize</button>
         </div>
         <div id="stop-button-container" class="action-buttons" style="display: none;">
             <button type="button" id="stop-button" class="action-btn stop-btn">Stop Generating</button>
