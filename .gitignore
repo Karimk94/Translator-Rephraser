@@ -5,3 +5,6 @@
 /results
 logs/stderr.log
 logs/stdout.log
+graphify-out/
+.env
+/packages

@@ -1,21 +1,13 @@
 @echo off
-REM ============================================================================
-REM  Run script for the Local Image to Text API
-REM
-REM  This script will activate the virtual environment and start the Flask API.
-REM ============================================================================
+echo =========================================================
+echo  Starting Translator Rephraser API (FastAPI)
+echo =========================================================
+echo.
 
-echo Activating virtual environment...
 call venv\Scripts\activate.bat
 
-echo.
-echo Starting the Image to Text API server...
-echo Press CTRL+C to stop the server.
-echo.
+REM Uvicorn is the ASGI server standard
+echo Starting server on http://0.0.0.0:5005 ...
+uvicorn app:app --host 0.0.0.0 --port 5005 --workers 4
 
-REM Run the Flask application
-python app.py
-
-echo.
-echo Server has been stopped.
 pause

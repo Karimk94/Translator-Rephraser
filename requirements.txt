@@ -1,4 +1,5 @@
-flask
-flask-cors
+fastapi
+uvicorn
+jinja2
 requests
-waitress
+python-dotenv
